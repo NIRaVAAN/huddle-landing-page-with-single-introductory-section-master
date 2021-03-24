@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+			integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+			crossorigin="anonymous"
+		/>
+
+		<title>
+			Frontend Mentor | Huddle landing page with single introductory section
+		</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			:root {
+				--violet: hsl(257, 40%, 49%);
+				--soft-magenta: hsl(300, 69%, 71%);
+				--font-Title: "Poppins";
+				--font-body: "Open Sans";
+				--txt-color: white;
+				box-sizing: border-box;
+				font-size: calc(1vw + 0.5em);
+				/* font-size: 87.5%; */
+			}
+			*,
+			::after,
+			::before {
+				box-sizing: inherit;
+			}
+
+			body {
+				margin: 0;
+				background-color: hsl(257, 40%, 49%);
+				background-image: url("images/bg-mobile.svg");
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-origin: border-box;
+
+				font-family: var(--font-body);
+				color: var(--txt-color);
+				height: 100vh;
+				font-weight: 400;
+			}
+			@media (min-width: 640px) {
+				:root {
+					font-size: calc(1vw + 0.46em);
+				}
+			}
+			@media (min-width: 1080px) {
+				:root {
+					font-size: 1em;
+				}
+				body {
+					background-image: url(images/bg-desktop.svg);
+					background-size: cover;
+				}
+			}
+
+			body * + * {
+				margin-top: 2em;
+			}
+			@media (min-width: 1080px) {
+				body * + * {
+					margin-top: 2em;
+				}
+			}
+			/* uniform margins  and alignment +text alignment*/
+			body > * {
+				/* border: 1px solid red; */
+				margin-left: auto;
+				margin-right: auto;
+				width: 80%;
+				text-align: center;
+			}
+			@media (min-width: 1080px) {
+				body > * {
+					text-align: initial;
+					width: 90%;
+				}
+			} /* header styles */
+			.header {
+				margin-top: 3em;
+				/* padding: ; */
+				text-align: left;
+				/* height: 13vh; */
+			}
+			@media (min-width: 1080px) {
+				.header {
+					display: flex;
+					padding-top: 2em;
+					padding-bottom: 2em;
+					margin-top: 1em;
+				}
+			}
+			/* header img size */
+			.header__logo {
+				width: 40%;
+			}
+
+			@media (min-width: 1080px) {
+				.header__logo {
+					max-width: 20%;
+				}
+			}
+
+			/* main styles */
+			.main {
+				/* height: 65vh; */
+
+				padding-top: 0.6em;
+			}
+			@media (min-width: 1080px) {
+				.main > * {
+					/* border: 1px solid yellow; */
+					padding: 0;
+				}
+				.main {
+					/* padding-top: 2em; */
+					display: flex;
+					flex-direction: row;
+				}
+			}
+			.main__image {
+				width: 100%;
+			}
+			/*  ------------------------*/
+			@media (min-width: 1080px) {
+				.main__image {
+					width: 60%;
+				}
+			}
+			/* ------------------------------------- */
+			.main__content h1 {
+				font-size: 2rem;
+				font-family: var(--font-Title);
+				font-weight: 600;
+				padding-top: 1.5em;
+			}
+			.main__content p {
+				font-size: 1.3rem;
+			}
+			@media (min-width: 1080px) {
+				.main__content {
+					width: 40%;
+					margin-top: 0;
+					padding-left: 2.2em;
+					font-weight: normal;
+				}
+				.main__content h1 {
+					padding-top: 0;
+					font-size: 2rem;
+				}
+			}
+			.main__btn {
+				/* background-image: linear-gradient(0deg,var(--txt-color),gray 99%); */
+				background-color: var(--txt-color);
+				width: 60%;
+				margin: 2em auto 1em auto;
+				color: rgb(70, 70, 70);
+				border-radius: 5em;
+				padding: 0.7em 1em 0.7em 1em;
+				box-shadow: 0.1em 0.2em 1.7em 0.2em hsl(257, 26%, 27%);
+			}
+			.main__btn:hover {
+				cursor: pointer;
+				background-color: var(--soft-magenta)
+				;
+				
+				/* padding: 0.9em 1.4em 0.9em 1.4em ; */
+				
+			}
+			@media (min-width: 1080px) {
+				.main__btn {
+					margin: initial;
+					text-align: center;
+					margin-top: 2em;
+					padding: 0.7em;
+					width: 40%;
+					font-size: 1rem;
+				}
+			} /* defaults footrs*/
+
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: var(--txt-color);
+				font-size: 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			@media (min-width: 1080px) {
+				.attribution {
+					/* font-size: 1.5rem; */
+				}
+			}
+			.social {
+				/* text-align: center; */
+
+				padding-top: 1.5em;
+			}
+			@media (min-width: 1080px) {
+				.social {
+					display: flex;
+					justify-content: end;
+				}
+			}
+			.social > div {
+				border: 1px solid white;
+				width: 2.5em;
+				height: 2.5em;
+				display: inline-block;
+				border-radius: 30em;
+				margin: 0.2em;
+				position: relative;
+			}
+			@media (min-width: 1080px) {
+				.social > div {
+					font-size: 1rem;
+				}
+			}
+			.social i {
+				position: absolute;
+				max-width: 70%;
+				top: 0.79em;
+				left: 0.79em;
+			}
+			.social > div:nth-child(1) i {
+				left: 0.89em;
+			}
+			.social > div:nth-child(2) i {
+				left: 0.7em;
+			}
+			.social > div:nth-child(3) i {
+				left: 0.75em;
+				top: 0.7em;
+			}
+			/* spacing for mobiles */
+			header {
+				padding-top: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<img class="header__logo" src="images/logo.svg" alt="" />
+		</header>
+
+		<main class="main">
+			<img class="main__image" src="images/illustration-mockups.svg" alt="" />
+
+			<div class="main__content">
+				<h1 class="main__content__heading">
+					Build The Community Your Fans Will Love
+				</h1>
+
+				<p class="main__content__text">
+					Huddle re-imagines the way we build communities. You have a voice, but
+					so does your audience. Create connections with your users as you
+					engage in genuine discussion.
+				</p>
+				<div class="main__btn">Register</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="social">
+				<div class="facebook">
+					<i class="fab fa-facebook-f"></i>
+				</div>
+				<div class="twitter">
+					<i class="fab fa-twitter"></i>
+				</div>
+				<div class="instragram">
+					<i class="fab fa-instagram"></i>
+				</div>
+			</div>
+			<div class="challange">
+				<p class="attribution">
+					Challenge by
+					<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+						>Frontend Mentor</a
+					>. Coded by <a href="#"> Dimpal Thakur</a>.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
